@@ -26,26 +26,40 @@
   </div>
 </header>
 
-
-<section id="hero" class="fade-in">
+<main>
+  <section id="hero" class="hero fade-in">
   <div class="container">
-  
-  <h1>
-    Hi, I'm <span class="highlight-name">Jack Wambua</span>
-  </h1>
-  <p>Web Developer | Designer | Lifelong Learner</p>
-  
-<div class="hero-buttons">
-  <a href="#projects" class="btn">View My Work</a>
-  <a href="CV/Jack_CV.pdf" class="btn-outline" download>Download CV</a>
-</div>
+    
+    <div class="hero-content">
 
-</div>
+      <!-- Main Heading (Only ONE H1) -->
+      <h1>Hi, I'm Jack Wambua</h1>
+
+      <!-- Typing Subtitle -->
+      <h2 class="hero-subtitle">
+        <span id="typing"></span>
+      </h2>
+
+      <!-- Value Proposition -->
+      <p class="hero-description">
+        I design and develop modern, responsive websites that help businesses 
+        grow, attract clients, and stand out online.
+      </p>
+
+      <!-- Call To Action Buttons -->
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View My Work</a>
+        <a href="CV/Jack_CV.pdf" class="btn outline" download>Download CV</a>
+        <a href="#contact" class="btn secondary">Let’s Build Something Great</a>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
+
 <section class="section">
-
-
 <section id="about" class="fade-in">
   <section class="section">
   <div class="container">
@@ -53,40 +67,48 @@
     <p>
       I am a passionate Frontend Web Developer building modern and responsive
       websites for businesses and personal brands. I document my learning journey,
-      growth mindset, and commitment to showing up consistently every day.
+      growth mindset, and commitment to showing up consistently every day.</p>
+
+      <p>It all begins when you discover about it first, becomes real when you start working on it, grows bigger when you are resilient, tenacious, consistent, and focused on it.
     </p>
   </div>
 </section>
 
 
-<section id="skills" class="fade-in">
-  <section class="section">
+<section id="skills" class="section fade-in">
   <div class="container">
     <h2>Skills</h2>
 
     <div class="skill">
-      <p>HTML</p>
+      <h4>HTML</h4>
       <div class="progress-bar">
-        <div class="progress" data-width="90%"></div>
+        <div class="progress" data-width="85%">
+          <span class="progress-text">85%</span>
+        </div>
       </div>
     </div>
 
     <div class="skill">
-      <p>CSS</p>
+      <h4>CSS</h4>
       <div class="progress-bar">
-        <div class="progress" data-width="85%"></div>
+        <div class="progress" data-width="80%">
+          <span class="progress-text">80%</span>
+        </div>
       </div>
     </div>
 
     <div class="skill">
-      <p>JavaScript</p>
+      <h4>JavaScript</h4>
       <div class="progress-bar">
-        <div class="progress" data-width="70%"></div>
+        <div class="progress" data-width="70%">
+          <span class="progress-text">70%</span>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
+
 
 
 <section id="services" class="services fade-in">
@@ -202,36 +224,95 @@
 
 
 
-<section class="cta fade-in">
-  <section class="section">
-  <div class="cta-container">
-    <h2>Ready to Build Your Business Website?</h2>
-    <p>
-      Let’s create a professional, responsive website that helps your brand
-      grow and stand out online.
-    </p>
+<section id="pricing" class="pricing-section">
+  <section class="pricing-section fade-in">
 
-    <a href="#contact" class="btn">Start a Project</a>
+  <h2 class="section-title">Website Packages</h2>
+
+  <div class="pricing-container">
+
+    <div class="pricing-card">
+      <h3>Starter</h3>
+      <p class="price">Ksh 15,000</p>
+      <ul>
+        <li>1–3 Pages</li>
+        <li>Responsive Design</li>
+        <li>Basic SEO Setup</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Get Started</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <h3>Business</h3>
+      <p class="price">Ksh 30,000</p>
+      <ul>
+        <li>Up to 7 Pages</li>
+        <li>Contact Form</li>
+        <li>SEO Optimization</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Best Value</a>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Premium</h3>
+      <p class="price">Custom</p>
+      <ul>
+        <li>Unlimited Pages</li>
+        <li>Custom Features</li>
+        <li>Priority Support</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Request Quote</a>
+    </div>
+
   </div>
 </section>
 
 
 
 
-<section id="contact" class="fade-in">
-  <section class="section">
-  <div class="container">
-    <h2>Contact Me</h2>
+    <section id="contact" class="contact-section">
+      <section class="contact-section fade-in">
+  <div class="contact-container">
 
-    <p>Email: yourname@email.com</p>
-    <p>WhatsApp: +254 XXX XXX XXX</p>
+    <div class="contact-info">
+      <h2>Let’s Build Something Great</h2>
+      <p>
+        Have a project in mind? I design and develop fast,
+        responsive websites for businesses and individuals.
+      </p>
 
-    <form>
-      <input type="text" placeholder="Your Name" required><br><br>
-      <input type="email" placeholder="Your Email" required><br><br>
-      <textarea placeholder="Your Message" required></textarea><br><br>
-      <button class="btn">Send Message</button>
+      <p><strong>Email:</strong> your@email.com</p>
+      <p><strong>Location:</strong> Nairobi, Kenya</p>
+      <p>⏱ Typically respond within 24 hours.</p>
+    </div>
+
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="from_email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+      <button type="submit">Start a Project</button>
     </form>
+
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials">
+  <section class="testimonials-section fade-in">
+  <h2 class="section-title">What Clients Say</h2>
+
+  <div class="testimonial-container">
+
+    <div class="testimonial-card">
+      <p>"Jack delivered a clean and professional website beyond expectations."</p>
+      <h4>- Sarah M.</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Fast, responsive and easy to work with. Highly recommended."</p>
+      <h4>- Daniel K.</h4>
+    </div>
+
   </div>
 </section>
 

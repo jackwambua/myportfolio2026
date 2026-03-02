@@ -1,24 +1,47 @@
+/* =========================
+   FADE IN ANIMATION
+========================= */
+
 const faders = document.querySelectorAll('.fade-in');
 
-window.addEventListener('scroll', () => {
-  faders.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      section.classList.add('show');
-    }
-  });
+faders.forEach(fader => {
+  fader.classList.add("hidden");
 });
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("show");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+
+/* =========================
+   TOGGLE DARK MODE
+========================= */
 
 const toggleBtn = document.getElementById("theme-toggle");
 
-toggleBtn.addEventListener("click", function () {
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-});
+  });
+}
 
-document.getElementById("theme-toggle").onclick = function(){
-  document.body.classList.toggle("dark");
-};
 
+/* =========================
+   SMOOTH SCROLL
+========================= */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
@@ -34,27 +57,72 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+/* =========================
+   INTERACTIVE HERO TYPING EFFECT
+========================= */
 
-const progresses = document.querySelectorAll(".progress");
+const texts = [
+  "Web Developer",
+  "Frontend Designer",
+  "Responsive Website Builder",
+  "Portfolio & Business Websites"
+];
 
-window.addEventListener("scroll", () => {
-  const skillsSection = document.querySelector("#skills");
-  const sectionTop = skillsSection.getBoundingClientRect().top;
-  const trigger = window.innerHeight * 0.85;
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-  if(sectionTop < trigger){
-    progresses.forEach(bar => {
-      bar.style.width = bar.getAttribute("data-width");
-    });
-  }
-});
+const typingElement = document.getElementById("typing");
 
-const header = document.querySelector("header");
+function typeEffect() {
+  if (!typingElement) return;
 
-window.addEventListener("scroll", () => {
-  if(window.scrollY > 50){
-    header.classList.add("scrolled");
+  const currentText = texts[textIndex];
+
+  if (!isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentText.length) {
+      setTimeout(() => isDeleting = true, 1200);
+    }
   } else {
-    header.classList.remove("scrolled");
+    typingElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+    }
   }
-});
+
+  setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+if (typingElement) {
+  typeEffect();
+}
+
+
+/* =========================
+   SKILLS PROGRESS ANIMATION
+========================= */
+
+const skillSection = document.querySelector("#skills");
+const progressBars = document.querySelectorAll(".progress");
+
+if (skillSection) {
+  const skillObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      progressBars.forEach(bar => {
+        bar.style.width = bar.getAttribute("data-width");
+      });
+
+      observer.unobserve(skillSection);
+    });
+  }, { threshold: 0.3 });
+
+  skillObserver.observe(skillSection);
+}

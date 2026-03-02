@@ -353,7 +353,7 @@ header {
 
 /* keep content centered but not the hero itself */
 .hero-content {
-  text-align: centeR;
+  text-align: centeR;}
 
 .hero a {
   display: inline-block;
@@ -385,12 +385,13 @@ header {
 /* Hover */
 .cta-btn:hover{
     opacity:0.9;
-}}
+}
 
 
 body.light .cta-btn{
     color:#ffffff;
 }
+
 
 
 /*====CARDS===*/
