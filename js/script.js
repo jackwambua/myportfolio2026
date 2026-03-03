@@ -2,18 +2,18 @@
    FADE IN ANIMATION
 ========================= */
 
-const faders = document.querySelectorAll('.fade-in');
+const faders = document.querySelectorAll(".fade-in");
 
-faders.forEach(fader => {
+faders.forEach((fader) => {
   fader.classList.add("hidden");
 });
 
 const appearOptions = {
-  threshold: 0.2
+  threshold: 0.2,
 };
 
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
 
     entry.target.classList.add("show");
@@ -21,10 +21,9 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
   });
 }, appearOptions);
 
-faders.forEach(fader => {
+faders.forEach((fader) => {
   appearOnScroll.observe(fader);
 });
-
 
 /* =========================
    TOGGLE DARK MODE
@@ -38,24 +37,23 @@ if (toggleBtn) {
   });
 }
 
-
 /* =========================
    SMOOTH SCROLL
 ========================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll("a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+    const href = this.getAttribute("href");
 
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
+    if (href.startsWith("#") && href.length > 1) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
   });
 });
-
 
 /* =========================
    INTERACTIVE HERO TYPING EFFECT
@@ -65,7 +63,7 @@ const texts = [
   "Web Developer",
   "Frontend Designer",
   "Responsive Website Builder",
-  "Portfolio & Business Websites"
+  "Portfolio & Business Websites",
 ];
 
 let textIndex = 0;
@@ -84,7 +82,7 @@ function typeEffect() {
     charIndex++;
 
     if (charIndex === currentText.length) {
-      setTimeout(() => isDeleting = true, 1200);
+      setTimeout(() => (isDeleting = true), 1200);
     }
   } else {
     typingElement.textContent = currentText.substring(0, charIndex - 1);
@@ -103,7 +101,6 @@ if (typingElement) {
   typeEffect();
 }
 
-
 /* =========================
    SKILLS PROGRESS ANIMATION
 ========================= */
@@ -112,17 +109,20 @@ const skillSection = document.querySelector("#skills");
 const progressBars = document.querySelectorAll(".progress");
 
 if (skillSection) {
-  const skillObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+  const skillObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-      progressBars.forEach(bar => {
-        bar.style.width = bar.getAttribute("data-width");
+        progressBars.forEach((bar) => {
+          bar.style.width = bar.getAttribute("data-width");
+        });
+
+        observer.unobserve(skillSection);
       });
-
-      observer.unobserve(skillSection);
-    });
-  }, { threshold: 0.3 });
+    },
+    { threshold: 0.3 },
+  );
 
   skillObserver.observe(skillSection);
 }
