@@ -153,3 +153,24 @@ hamburger.addEventListener("click", ()=>{
     hamburger.classList.toggle("active");
     navLinks.classList.toggle("active");
 });
+
+
+const toggle = document.querySelector(".theme-toggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+/* Navbar scroll effect */
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 50){
+    navbar.classList.add("scrolled");
+  } 
+  else{
+    navbar.classList.remove("scrolled");
+  }
+
+});
