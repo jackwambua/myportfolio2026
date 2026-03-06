@@ -149,7 +149,7 @@ p{
 body.light-mode .hero-overlay{
   background:linear-gradient(
     rgba(255,255,255,0.4),
-    rgba(0,0,0,0.55)
+    rgba(0,0,0,0.8)
   );
 }
 /* content */
@@ -177,7 +177,7 @@ body.light-mode .hero-overlay{
   width:120px;
   height:3px;
   margin:15px auto;
-  background:linear-gradient(90deg,#c59d5f,#f1c27d,#c59d5f);
+  background:linear-gradient(90deg,#c59d5f,#ff11dd,#c59d5f);
   animation:goldGlow 3s infinite alternate;
 }
 
@@ -217,15 +217,11 @@ body.light-mode .hero-overlay{
 /* ===============================
    BUTTONS
 ================================= */
-.cta-btn,
-.btn-primary {
-  background: #d4af37;   /* strong gold */
-  color: #111;
-  margin-top: 20px;
-}
 
-.btn-primary:hover {
-  background: #b68d40;
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: var(--bg-color);
+  color:var(--accent-color);
   transform: translateY(-2px);
   transition: 0.3s;
 }
@@ -233,11 +229,11 @@ body.light-mode .hero-overlay{
 .btn-primary,
 .btn-secondary {
   border: 2px solid #d4af37;
-  color: #d4af37;
+  color: var(--accent-color);
   padding: 12px 25px;
   border-radius: 5px;
   text-decoration: none;
-  background: transparent;
+  
 }
 
 /* MOBILE */
@@ -262,6 +258,43 @@ body.light-mode .hero-overlay{
 }
 }
 
+.cta-section{
+  display: inline-block;
+  background:var(--primary-color);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  accent-color: var(--accent-color);
+}
+
+.cta-button {
+  text-align: center;
+  display: flex;
+  background: #c59d5f;
+  border: 2px solid #d4af37;;
+}
+.cta-button:hover {
+  display: inline-block;
+  padding:14px 30px;
+  background:var(--accent-color);
+  color:#fff;
+  font-weight: bold;
+  border-radius: 5px;
+  transition:0.3s;
+}
+.cta-button:hover {
+  background: #a67c3d;
+  transform:translateY(-3px);
+}
 /* ===============================
    BOOK APPOINTMENT SECTION
 ================================= */
@@ -340,6 +373,7 @@ body.light-mode .hero-overlay{
 .btn-secondary:hover{
   background:var(--accent-color);
   color:var(--bg-color);
+  
 }
 
 
@@ -366,6 +400,14 @@ p {
   padding:25px;
   border-radius:12px;
   transition:0.3s ease;
+}
+
+.testimonial {
+  background-color: #c59d5f;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  font-display: var(--accent-color);
+  font-weight: 800;
 }
 
 .card:hover{
