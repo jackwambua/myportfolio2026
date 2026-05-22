@@ -1,0 +1,48 @@
+
+
+
+<header class="header">
+
+  <nav class="navbar-container">
+
+    <div class="logo">WPLS Admin</div>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li><a href="../index.html">Home</a></li>
+
+      <li><a href="../admin/dashboard.html">Dashboard</a></li>
+
+      <li><a href="../admin/courses.html">Courses</a></li>
+
+      <li><a href="../admin/students.html">Students</a></li>
+
+      <li><a href="../admin/instructors.html">Instructors</a></li>
+
+      <li><a href="../login.html" class="btn-nav">Logout</a></li>
+
+    </ul>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+  </nav>
+
+</header>
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+
+const navLinks = document.getElementById("navLinks");
+
+if(hamburger && navLinks){
+
+  hamburger.addEventListener("click", () => {
+
+    navLinks.classList.toggle("show");
+
+  });
+
+}
+
+</script>

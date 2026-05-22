@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Panel | WPLS</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+   <link rel="icon" href="../assets/icons/favicon.png"> 
+</head>
+
+<body>
+
+<header class="header">
+
+  <nav class="navbar container">
+
+    <div class="logo">WPLS Admin</div>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li><a href="../index.html" class="active">Home</a></li>
+
+      <li><a href="dashboard.html">Dashboard</a></li>
+
+      <li><a href="courses.html">Courses</a></li>
+
+      <li><a href="students.html">Students</a></li>
+
+      <li><a href="instructors.html">Instructors</a></li>
+
+    </ul>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content container">
+
+    <div class="hero-text">
+
+      <h1>
+        WPLS Administration Panel
+      </h1>
+
+      <p>
+        Manage students, instructors, courses and institutional operations from one centralized dashboard.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="dashboard.html" class="btn-primary">
+          Open Dashboard
+        </a>
+
+        <a href="courses.html" class="btn-secondary">
+          Manage Courses
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="../assets/images/admin.jpg" alt="Admin Panel">
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="features">
+
+  <div class="container features-grid">
+
+    <div class="feature-card">
+      <h3>Student Management</h3>
+      <p>
+        Register and manage learners efficiently.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Course Control</h3>
+      <p>
+        Create and monitor language programs.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Instructor Oversight</h3>
+      <p>
+        Manage teaching staff and assignments.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 WPLS Administration System
+    </p>
+  </div>
+
+</footer>
+
+<script src="../assets/js/script.js"></script>
+
+<script>
+
+fetch("../assets/components/navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+fetch("../assets/components/footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
+</script>
+
+
+</body>
+</html>

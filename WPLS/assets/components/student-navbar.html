@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Navbar | WPLS</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+
+  <nav class="navbar-container">
+
+    <div class="logo">WPLS Student</div>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li><a href="../index.html">Home</a></li>
+
+      <li><a href="/student/dashboard.html">Dashboard</a></li>
+
+      <li><a href="/student/courses.html">Courses</a></li>
+
+      <li><a href="../contact.html">Support</a></li>
+
+      <li><a href="../login.html" class="btn-nav">Logout</a></li>
+
+    </ul>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+  </nav>
+
+</header>
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+
+const navLinks = document.getElementById("navLinks");
+
+if(hamburger && navLinks){
+
+  hamburger.addEventListener("click", () => {
+
+    navLinks.classList.toggle("show");
+
+  });
+
+}
+
+</script>
+
+</body>
+
+</html>
