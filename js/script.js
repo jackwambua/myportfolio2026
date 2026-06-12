@@ -126,3 +126,30 @@ if (skillSection) {
 
   skillObserver.observe(skillSection);
 }
+
+
+// ===============================
+// MOBILE NAVIGATION TOGGLE
+// ===============================
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger && navLinks) {
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // CLOSE MENU WHEN LINK CLICKED
+  const navItems = document.querySelectorAll(".nav-links a");
+
+  navItems.forEach(link => {
+
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+
+  });
+
+}

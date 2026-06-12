@@ -36,29 +36,40 @@
   
 
   <body>
-    <header>
-      <nav class="navbar">
-      
-          <img src="hero.png" alt="Elite Cuts Barbershop logo with sculpted lettering and barber pole accent">
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#" class="gold-btn">Book Now</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+  <header class="header">
 
-        <div class="theme-toggle" id="themeToggle">🌙</div>
+  <nav class="navbar">
 
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
+    <!-- Logo -->
+    <div class="logo">
+      <h2>Elite Barbershop</h2>
+    </div>
 
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="nav-links">
+
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="#" class="book-btn">Book Now</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+    
     <!-- HERO SECTION -->
 <section class="hero" id="home">
 
@@ -135,14 +146,14 @@ Experience the sharpest style in Mombasa.
           </div>
 
           <div class="gallery-item">
-            <img src="images/hero.jpg" alt="Barbershop interior with polished chairs and professional grooming tools" />
+            <img src="images/barbershop-hero.jpg" alt="Barbershop interior with polished chairs and professional grooming tools" />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Booking CTA -->
-    <section id="cta-booking"class="cta-section">
+    <section id="cta-booking" class="cta-section">
       <div class="container">
         <h2>Ready for a Fresh Cut?</h2>
         <p>Book your appointment today and experience professional grooming.</p>
@@ -312,10 +323,17 @@ Sharp fades, classic cuts, and modern style.
     <!--JS-->
     <script src="js/script.js"></script>
 
-    
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    
+<script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+</script>
+
   </body>
 </html>
