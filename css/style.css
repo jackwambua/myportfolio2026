@@ -30,10 +30,10 @@ body {
   --text-muted:#475569;
 
   /* BORDERS */
-  --border-color:#c8f1ec;
+  --border-color:#61ebdb;
 
   /* NAVBAR & FOOTER */
-  --navbar-bg:#14b8a6;
+  --navbar-bg:#e0d2d2;
   --footer-bg:#0c9b79;
 
   /* HEADINGS */
@@ -138,7 +138,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color:var(--navbar-bg);
+  color:var(--text-muted);
   font-weight: 600;
 }
 
@@ -157,6 +157,16 @@ nav {
   background-color:var(--accent-dark);
 }
 
+
+.cv-btn {
+  background: var(--accent);
+  color:var(--accent-dark);
+}
+
+.cv-btn:hover {
+  opacity: 0.9;
+}
+
 /* ======== HERO ========== */
 #hero {
   background: var(--bg-color);
@@ -169,138 +179,46 @@ nav {
   flex-wrap: wrap;
 
   border-radius: 30px;
-
   text-align: left;
 }
 
 /* HERO CONTENT */
 .hero-content {
-  flex: 1 1 500px;
+  flex: 1;
+  min-width: 300px;
 }
 
 /* HERO IMAGE */
-.hero-image {
-  width: clamp(260px, 30vw, 380px);
-  height: clamp(260px, 30vw, 380px);
-  object-fit: cover;
-  border-radius: 50%;
-  overflow: hidden;
-  display: block;
-  border: 4px solid #27d3b0;
-  object-position: center ;
-  margin: auto;
-
+.hero-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-
+.hero-image img{
+  width: clamp(280px, 28vw, 320px);
+  height: clamp(280px, 28vw, 320px);
+  border-radius: 50%;
   object-fit: cover;
-  display: block;
   object-position: center;
+  border: 4px solid #27d3b0;
+  display: block;
+}
+
+.hero-content h1 {
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: var(--accent-dark);
 }
 
 .hero span{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
-  color:var(--text-color);
-
-@media(max-width:360px) {
-
-  
+  color: var(--text-color);
 }
-  }
-
-/* LARGE SCREENS */
-@media (max-width: 1200px) {
-  #hero {
-    gap: 3rem;
-  }
-
-  .hero-image img {
-    max-width: 360px;
-  }
-}
-
-/* TABLETS */
-@media (max-width: 768px) {
-  #hero {
-    flex-direction: column-reverse;
-    text-align: center top;
-    padding: 80px 20px;
-    gap: 2.5rem;
-    border-radius: 24px;
-  }
-
-  
-  .hero-content,
-  .hero-image {
-    flex: 1 1 100%;
-  }
-
-  .hero-image img {
-    max-width: 280px;
-    width: 255px;
-    height: 270px;
-}
-
-@media (max-width: 460px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-image img {
-    width: 200px;
-    height: 200px;
-    max-width: 320px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
-  }
-}
-
-  .hero span {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    vertical-align: auto;
-    }
-
-  .hero-content h1{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    padding:10px;
-      }
-
-}
-
-.hero-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.hero-content h1 {
-  font-size: 30px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  align-items:center;
-  color:var(--accent-dark);
-  }
 
 .hero p {
   opacity: 0;
@@ -314,8 +232,57 @@ nav {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
+
+/* TABLETS */
+@media (max-width: 768px) {
+
+  #hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 80px 20px;
+    gap: 2.5rem;
+    border-radius: 24px;
+  }
+
+  .hero-content,
+  .hero-image {
+    flex: 1 1 100%;
+  }
+
+  .hero-image img {
+    width: 255px;
+    height: 255px;
+    max-width: 280px;
+  }
+
+  .hero-content h1{
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+
+  .hero span{
+    font-size: 1.2rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 460px){
+
+  .hero-image img{
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-content h1{
+    font-size: 1.5rem;
+  }
+
+  .hero span{
+    font-size: 1rem;
+  }
+}
+
 
 .hero-subtitle {
   font-size: 18px;
