@@ -187,26 +187,28 @@ nav {
 /* HERO CONTENT */
 .hero-content {
   flex: 1;
-  min-width: 300px;
+  min-width: 380px;
 }
 
 /* HERO IMAGE */
 .hero-image{
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
 }
 
 .hero-image img{
-  width: clamp(280px, 28vw, 320px);
-  height: clamp(280px, 28vw, 320px);
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border: 4px solid #27d3b0;
-  display: block;
+  display:block ;
 }
 
 .hero-content h1 {
@@ -237,27 +239,35 @@ nav {
 }
 
 /* TABLETS */
-@media (max-width: 768px) {
+  @media (max-width:768px){
 
-  #hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 80px 20px;
-    gap: 2.5rem;
-    border-radius: 24px;
+    @media (max-width:768px){
+
+  #hero{
+    flex-direction:column-reverse;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
   }
 
-  .hero-content,
-  .hero-image {
-    flex: 1 1 100%;
+  .hero-content{
+    min-width:0;
+    width:100%;
+    max-width:280px;
+    margin:0 auto;
+    text-align:center;
   }
 
-  .hero-image img {
-    width: 255px;
-    height: 255px;
-    max-width: 280px;
+  .hero-content p,
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content span{
+    text-align:center;
   }
 
+}
+
+}
   .hero-content h1{
     font-size: 2.5rem;
     padding: 10px;
@@ -266,10 +276,32 @@ nav {
   .hero span{
     font-size: 1.3rem;
   }
-}
 
-/* MOBILE */
-@media (max-width: 460px){
+
+@media (max-width:360px){
+
+  #hero{
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    gap: 1rem;
+    border-radius: 10px;
+  }
+
+  .hero-content{
+    flex: 1 1 100%;
+    max-width: 280px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 
   .hero-image img{
     width: 220px;
@@ -280,9 +312,14 @@ nav {
     font-size: 2.5rem;
   }
 
-  .hero span{
+  #hero p{
+    text-align: center;
+  }
+
+  .hero-content span{
     font-size: 1rem;
   }
+
 }
 
 
