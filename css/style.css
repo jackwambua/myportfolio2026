@@ -25,8 +25,14 @@ body {
   --accent:#14b8a6;
   --accent-dark:#0c9b79;
 
+  /* HEADING */
+  --h1-color:#01040c;
+  --h2-color:#042210;
+  --h3-color:#085c21;
+  --h4-color:#0d6653;
+  
   /* TEXT */
-  --text-color:#0f172a;
+  --text-color:#1f2221;
   --text-muted:#475569;
 
   /* BORDERS */
@@ -34,10 +40,8 @@ body {
 
   /* NAVBAR & FOOTER */
   --navbar-bg:#e0d2d2;
-  --footer-bg:#0c9b79;
+  --footer-bg:#14ddae;
 
-  /* HEADINGS */
-  --h1-color:#0f172a;
 }
 body.dark-mode {
   --bg-color: #0f172a;
@@ -45,8 +49,13 @@ body.dark-mode {
   --card-bg: #1e293b;
 
   --accent: #27d3b0;
-  --accent-dark: #1fb89a;
+  --accent-dark: #08cea6;
 
+  --h1-color:#10ad89;
+  --h2-color:#0fd18a;
+  --h3-color:#0de0cff6;
+  --h4-color:#26a3eb;
+  
   --text-color: #edf3f3;
   --text-muted: #edeff1;
 
@@ -64,13 +73,6 @@ body {
   color: var(--text-color);
   font-family: "Segoe UI", Roboto, sans-serif;
   transition: 0.3s ease;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: var(--text-color);
 }
 
 .container {
@@ -208,10 +210,10 @@ nav {
 }
 
 .hero-content h1 {
-  font-size: 30px;
+  font-size: 40px;
   margin-top: 15px;
   margin-bottom: 15px;
-  color: var(--accent-dark);
+  color: var(--h1-color);
 }
 
 .hero span{
@@ -257,12 +259,12 @@ nav {
   }
 
   .hero-content h1{
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     padding: 10px;
   }
 
   .hero span{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -275,7 +277,7 @@ nav {
   }
 
   .hero-content h1{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .hero span{
@@ -392,10 +394,28 @@ nav {
 /* =========
     ABOUT
 ===========*/
+#about{
+  padding: 100px 20px;
+  align-items:center;
+  text-align: center;
+  justify-items: center;
+  margin:auto;
+  line-height: 1.8;
+}
+
+ #about h2{
+color:var(--h2-color);
+font-size: 35px;
+font-family: sans-serif;
+text-align: left;
+ }
+
 #about p {
   max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
+  margin-top: 15px;
+  align-items: center;
+  justify-items: center;
+  align-items: center;
   font-size: 18px;
   line-height: 1.8;
   color: var(--text-muted);
@@ -412,9 +432,11 @@ nav {
 
 .skills h2 {
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
+  font-family: sans-serif;
   margin-bottom: 50px;
-  color: var(--text-color);
+  color: var(--h2-color);
+  
 }
 
 .skills-grid {
@@ -440,7 +462,8 @@ nav {
 
 .skill-info h4 {
   font-size: 18px;
-  color: var(--text-color);
+  color:var(--h4-color)
+
 }
 
 .progress-text {
@@ -466,7 +489,11 @@ nav {
   transition: width 1.5s ease;
 }
 
-/*=======SERVICES OFFERED==========*/
+
+/*===============
+ SERVICES OFFERED
+     ============*/
+
 .services {
   text-align: center;
   margin-top: 30px;
@@ -486,8 +513,15 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.services h2{
+  color: var(--h2-color);
+  font-size: 35px;
+  font-family: sans-serif;
+}
+
 .service-card h3 {
   margin-bottom: 15px;
+  color: var(--h3-color);
 }
 
 .service-card,
@@ -510,7 +544,7 @@ nav {
   text-align: center;
   padding: 60px 0;
   background: var(--section);
-  color: var(--text);
+  color: var(--text-color);
 }
 
 /* PROJECT GRID */
@@ -552,13 +586,20 @@ nav {
 
 /* PROJECT CONTENT */
 .project-content {
-  padding: 20px;
+  padding:100px 20px;
 }
 
+.container h2{
+  color:var(--h2-color);
+  font-weight: 700;
+  font-size: 35px;
+  font-family:sans-serif;
+}
 /* PROJECT TITLE */
 .project-content h3 {
   font-size: 22px;
   margin-bottom: 10px;
+  color: var(--h3-color);
 }
 
 /* PROJECT TEXT */
@@ -623,6 +664,12 @@ nav {
   text-align: center;
 }
 
+.pricing-section h2{
+  color:var(--h2-color);
+  font-family: sans-serif;
+  font-size: 35px;
+}
+
 .pricing-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -649,6 +696,7 @@ nav {
 .pricing-card h3 {
   font-weight: 600;
   margin-bottom: 10px;
+  color:var(--h3-color)
 }
 
 .pricing-card li {
@@ -684,6 +732,7 @@ CALL-TO-ACTION BANNER
 .cta h2 {
   font-size: 2rem;
   margin-bottom: 15px;
+  color: var(--h2-color);
 }
 
 .cta p {
@@ -715,7 +764,7 @@ CALL-TO-ACTION BANNER
 .contact-info h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  accent-color: var(--accent);
+  accent-color: var(--h2-color);
 }
 
 .contact-info p {
@@ -795,6 +844,9 @@ CALL-TO-ACTION BANNER
   margin-top: 50px;
 }
 
+.testimonials h2{
+  color:var(--h2-color);
+}
 .testimonial-card {
   max-width: 400px;
   background: var(--card-bg);
@@ -810,6 +862,13 @@ CALL-TO-ACTION BANNER
   margin-top: 80px;
 }
 
+.footer h3{
+  color:var(--h3-color);
+}
+
+.footer h4{
+  color:var(--h4-color)
+}
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -820,10 +879,7 @@ CALL-TO-ACTION BANNER
   border-radius:0 px;
 }
 
-.footer h3,
-.footer h4 {
-  color: var(--text-color);
-}
+
 
 .footer p {
   color: var(--text);
