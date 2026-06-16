@@ -187,7 +187,7 @@ nav {
 /* HERO CONTENT */
 .hero-content {
   flex: 1;
-  min-width: 380px;
+  min-width: 0;
 }
 
 /* HERO IMAGE */
@@ -210,6 +210,8 @@ nav {
   border: 4px solid #27d3b0;
   display:block ;
 }
+
+*{outline:1px solid red}
 
 .hero-content h1 {
   font-size: 40px;
@@ -239,11 +241,10 @@ nav {
 }
 
 /* TABLETS */
-  @media (max-width:768px){
-
     @media (max-width:768px){
 
   #hero{
+    display:flex;
     flex-direction:column-reverse;
     align-items:center;
     justify-content:center;
@@ -265,9 +266,24 @@ nav {
     text-align:center;
   }
 
-}
+    .hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  
+  }
+
+  .hero-image img{
+    display:block;
+    margin:0 auto;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:contain;
+  }
 
 }
+
   .hero-content h1{
     font-size: 2.5rem;
     padding: 10px;
