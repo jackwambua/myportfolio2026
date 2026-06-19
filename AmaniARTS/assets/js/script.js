@@ -8,7 +8,7 @@ menuBtn.addEventListener("click", () => {
 
 if(navLinks.style.display === "flex"){
 
-navLinks.style.display = "none";
+navL.style.display = "none";
 
 }else{
 
@@ -33,13 +33,4 @@ function showTestimonial() {
     }
 }
 
-showTestimonial();
-setInterval(showTestimonial, 4000);
-
-const links = document.querySelectorAll("nav ul li a");
-
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
+showTe

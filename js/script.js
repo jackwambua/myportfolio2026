@@ -135,21 +135,18 @@ if (skillSection) {
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
-if (hamburger && navLinks) {
-
   hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle("active");
   });
 
   // CLOSE MENU WHEN LINK CLICKED
-  const navItems = document.querySelectorAll(".nav-links a");
-
-  navItems.forEach(link => {
-
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener('click',() => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
     });
-
   });
 
-}
+  
+
