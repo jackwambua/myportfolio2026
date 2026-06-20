@@ -40,18 +40,18 @@ section:not(:last-child)::after {
   /* BRAND */
   --accent:#14b8a6;
   --accent-dark:#0c9b79;
-  --primary:#02141a;
+  --primary:rgb(223, 17, 17);
 
   /* HEADING */
   --h1-color:#01040c;
   --h2-color:#042210;
-  --h3-color:#085c21;
+  --h3-color:#0fe750;
   --h4-color:#0d6653;
 
   
   /* TEXT */
-  --text-color:#1f2221;
-  --text-muted:#475569;
+  --text-color:#131414;
+  --text-muted:#757679;
 
   /* BORDERS */
   --border-color:#61ebdb;
@@ -68,7 +68,7 @@ body.dark-mode {
 
   --accent: #27d3b0;
   --accent-dark: #08cea6;
-  --primary:#0795c4;
+  --primary:#15f5f5;
 
   --h1-color:#10ad89;
   --h2-color:#0fd18a;
@@ -277,23 +277,29 @@ theme toggle
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+
   gap: 4rem;
   flex-wrap: wrap;
 
   border-radius: 30px;
   text-align: left;
+  width: 100%;
 }
 
 /* HERO CONTENT */
 .hero-content {
-  flex: 1;
-  min-width: 0;
+ flex: 1;
+  margin: auto;
+  width:90%;
+  max-width: 350px;
+  vertical-align:auto;
 }
 
 /* HERO IMAGE */
 .hero-image{
-  display: flex;
+  display: block;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -301,7 +307,7 @@ theme toggle
   height: 320px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .hero-image img{
@@ -311,10 +317,7 @@ theme toggle
   object-fit: contain;
   object-position: center;
   border: 4px solid #27d3b0;
-  display:block ;
 }
-
-
 
 .hero-content h1 {
   font-size: 40px;
@@ -334,7 +337,14 @@ theme toggle
   font-size: 18px;
   transform: translateY(20px);
   animation: fadeUp 1s ease forwards;
-}
+ }
+
+ .hero-description {
+  text-align: center;
+  align-items: center;
+  vertical-align: auto;
+
+ }
 
 @keyframes fadeUp {
   to {
@@ -342,6 +352,7 @@ theme toggle
     transform: translateY(0);
   }
 }
+
 
 /* TABLETS */
     @media (max-width:768px){
@@ -384,27 +395,35 @@ theme toggle
         gap:1rem;
       }
 
-  #hero{
-    display:flex;
+  .hero{
+    display:block;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
+    padding: 100px 20px ;
   }
 
-  .hero-content{
-    min-width:0;
-    width:100%;
-    max-width:280px;
-    margin:0 auto;
-    text-align:center;
+  .hero-content {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-content p,
   .hero-content h1,
   .hero-content h2,
-  .hero-content span{
-    text-align:center;
+  .hero-content span {
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    max-width: 340px;
+    margin: auto;
   }
 
     .hero-image{
@@ -415,14 +434,29 @@ theme toggle
   }
 
   .hero-image img{
-    display:block;
-    margin:0 auto;
-    width:218.9px;
-    height:238px;
-    border-radius:50%;
-    object-fit:contain;
+    display: block;
+    margin: auto;
+    width: 218px;
+    height: 238px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
+  .hero-description {
+
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    margin:auto;
+  }
+  .hero-subtitle {
+    display:block;
+     margin: auto;
+  }
+
+  .typing{
+    display:flex
+  }
 }
 
   .hero-content h1{
@@ -512,7 +546,7 @@ text-align: left;
   align-items: center;
   font-size: 18px;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--text-color);
 }
 
 /* =========
@@ -563,7 +597,7 @@ text-align: left;
 .progress-text {
   font-size: 15px;
   font-weight: bold;
-  color: var(--text-muted);
+  color: var(--text-color);
 }
 
 /* BAR BACKGROUND */
@@ -950,7 +984,9 @@ CALL-TO-ACTION BANNER
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ================= FOOTER ================= */
+/* =================
+    FOOTER 
+  =============== */
 .footer {
   background: var(--footer-bg);
   margin-top: 80px;
@@ -972,7 +1008,6 @@ CALL-TO-ACTION BANNER
   background: var(--footer-bg);
   border-radius:0 px;
 }
-
 
 
 .footer p {
