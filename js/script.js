@@ -60,10 +60,14 @@ document.querySelectorAll("a").forEach((anchor) => {
 ========================= */
 
 const texts = [
-  "Web Developer",
-  "Frontend Designer",
-  "Responsive Website Builder",
-  "Portfolio & Business Websites",
+  "Web Designer",
+  "Frontend Developer",
+  "Responsive Websites",
+  "Portfolio Websites",
+  "Business Websites",
+  "Landing Pages",
+  "web redesigns",
+
 ];
 
 let textIndex = 0;
@@ -128,25 +132,28 @@ if (skillSection) {
 }
 
 
-// ===============================
-// MOBILE NAVIGATION TOGGLE
-// ===============================
-
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
+if (hamburger && navLinks) {
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle('active');
+    hamburger.classList.toggle("active");
     navLinks.classList.toggle("active");
   });
 
-  // CLOSE MENU WHEN LINK CLICKED
+  // close mobile menu when a nav link is clicked
   document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener('click',() => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
     });
   });
+}
 
-  
-
+/* ===================
+   FOOTER YEAR UPDATE 
+   ==================== */
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
