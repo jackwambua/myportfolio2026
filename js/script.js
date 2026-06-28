@@ -66,7 +66,7 @@ const texts = [
   "Portfolio Websites",
   "Business Websites",
   "Landing Pages",
-  "web redesigns",
+  "Web Redesigns",
 
 ];
 

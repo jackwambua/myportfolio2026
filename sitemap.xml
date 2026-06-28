@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <!-- MAIN PORTFOLIO-->
+ <url>
+  <loc>https://jackwambua.github.io/myportfolio2026/</loc>
+   <lastmod>2026-06-22</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>1.0</priority>
+ </url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/cv.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changfreq>
+   <priority>0.8</priority>
+ </url>
+
+   <!-- PORTFOLIO PROJECTS-->
+
+   <!-- AmaniARTS -->
+<url> 
+ <loc>https://jackwambua.github.io/myportfolio2026/AmaniARTS/</loc>
+  <lastmod>2026-06-24</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
+  <!-- BARBERSHOP-->
+<url> 
+ <loc>https://jackwambua.github.io/myportfolio2026/barbershop/</loc>
+  <lastmod>2026-06-24</lastmod>
+  <changefreq>monthly<changefreq>
+  <priority>0.8<priority>
+</url>
+
+   
+   <!-- WPLS MAIN PAGES -->
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/</loc>
+  <lastmod>2026-06-24</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/about.html</loc>
+  <lastmod>2026-06-24</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/contact.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7</priority>
+</url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/courses.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.8</priority>
+</url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/courses/english.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7</priority>
+</url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/courses/french.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7</priority>
+</url>
+
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/courses/german.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7</priority>
+</url>
+
+<url>
+ <loc>https://jackwambua.github.io/myportfolio2026/WPLS/courses/swahili.html</loc>
+   <lastmod>2026-06-24</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7</priority>
+</url>
+
+</urlset>

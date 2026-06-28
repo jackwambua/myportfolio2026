@@ -1,0 +1,5 @@
+User-agent:*
+Allow:/
+
+Sitemap:
+https://jackwambua.github.io/myportfolio2026/sitemap.xml
