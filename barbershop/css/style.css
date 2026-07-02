@@ -156,59 +156,70 @@ body.dark-mode{
 
 /* HERO CONTENT */
 .hero-content{
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero-tagline{
+    display: inline-block;
+    color: #c59d5f;
+    font-size: .95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
 }
 
 .hero-content h1{
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  margin-bottom: 15px;
-  line-height: 1.1;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .hero-content p{
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e7e7e7;
+    margin-bottom: 2rem;
 }
 
-/* BUTTONS */
 .hero-buttons{
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.hero-buttons a{
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.3s ease;
+.btn{
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
 }
 
-/* PRIMARY BUTTON */
 .btn-primary{
-  background: #c59d5f;
-  color: #fff;
+    background: #c59d5f;
+    color: #fff;
 }
 
 .btn-primary:hover{
-  background: #a57f45;
-  transform: translateY(-3px);
+    background: #ad8348;
+    transform: translateY(-3px);
 }
 
-/* SECONDARY BUTTON */
 .btn-secondary{
-  border: 2px solid #fff;
-  color: #fff;
+    border: 2px solid #fff;
+    color: #fff;
 }
 
 .btn-secondary:hover{
-  background:var(--accent-color);
-  color: #111;
+    background: #fff;
+    color: #111;
 }
 
 /* LIGHT MODE */
