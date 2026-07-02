@@ -116,32 +116,42 @@ body.dark-mode{
 
 }
 
-/*======HERO SECTION================*/
+.hero {
+    position: relative;
+    min-height: 85vh;
 
-.hero{
-  position: relative;
-  min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
 
-  padding: 40px 20px;
-  overflow: hidden;
-  color: #fff;
+.hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
 
-  /* background image */
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.55)
-    ),
-    url("images/barber-hero.jpg");
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 /* HERO CONTENT */
