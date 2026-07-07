@@ -70,6 +70,27 @@ body.dark-mode{
   border-radius:5px;
 }
 
+/* Header after scrolling */
+.header.scrolled{
+    background:#111;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+/* Active nav link */
+.nav-links a.active-link{
+    color:#d4af37;
+}
+
+/* Mobile menu */
+.nav-links{
+    transition:.35s ease;
+}
+
+.nav-links.active{
+    right:0;
+}
+
 /* Hamburger */
 
 .menu-toggle{
@@ -788,9 +809,9 @@ footer{
 .footer-links h4,
 .footer-contact h4{
   color:#ffffff;
-
   margin-bottom:18px;
 }
+
 
 .footer-links ul{
   list-style:none;

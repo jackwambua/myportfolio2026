@@ -46,7 +46,7 @@ section:not(:last-child)::after {
   /* HEADING */
   --h1-color:#01040c;
   --h2-color:#042210;
-  --h3-color:#0fe750;
+  --h3-color:#22c051;
   --h4-color:#0d6653;
 
   
@@ -103,7 +103,46 @@ body {
   margin: auto;
 }
 
-/* ================= HEADER ================= */
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+  z-index: 9999;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid gold;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+}
+
+/* ===========
+     HEADER 
+   =========== */
 header {
   display: flex;
   justify-content: center;
@@ -266,6 +305,7 @@ header.scrolled {
   .hero-description {
     font-size: 0.95rem;
     line-height: 1.5;
+    margin-bottom: 10px;
   }
 }
 
@@ -392,6 +432,7 @@ theme toggle
   overflow: hidden;
   animation: blink 0.8s infinite;
   color: var(--accent);
+  margin-bottom: 10px;
 }
 
 
@@ -1308,6 +1349,20 @@ CALL-TO-ACTION BANNER
   .contact-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* Screen-reader-only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /*=======WHATSAPP BUTTON======*/

@@ -1,92 +1,6 @@
-/* =========================
-   BOOKING FORM
-========================= */
-
-const bookingForm = document.getElementById("booking-form");
-
-if (bookingForm) {
-
-  bookingForm.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    const formStatus = document.getElementById("form-status");
-
-    if (formStatus) {
-      formStatus.innerText =
-        "Demo booking form — backend not connected.";
-    }
-
-  });
-
-}
-
-
-/* =========================
-   TESTIMONIAL SLIDER
-========================= */
-
-let index = 0;
-
-const testimonials = document.querySelectorAll(".testimonial-card");
-
-function showTestimonial() {
-
-  if (testimonials.length === 0) return;
-
-  testimonials.forEach(t => {
-    t.style.display = "none";
-  });
-
-  index++;
-
-  if (index > testimonials.length) {
-    index = 1;
-  }
-
-  testimonials[index - 1].style.display = "block";
-
-  setTimeout(showTestimonial, 4000);
-
-}
-
-showTestimonial();
-
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-function revealSections() {
-
-  const reveals = document.querySelectorAll(".fade-in");
-
-  reveals.forEach(section => {
-
-    const windowHeight = window.innerHeight;
-
-    const revealTop = section.getBoundingClientRect().top;
-
-    const revealPoint = 100;
-
-    if (revealTop < windowHeight - revealPoint) {
-
-      section.classList.add("active");
-
-    }
-
-  });
-
-}
-
-window.addEventListener("scroll", revealSections);
-
-window.addEventListener("load", revealSections);
-
-
-/* =========================
-   DOM CONTENT LOADED
-========================= */
+/* ==================================================
+   ELITE BARBERSHOP
+================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -94,55 +8,77 @@ document.addEventListener("DOMContentLoaded", () => {
      ELEMENTS
   ========================= */
 
+  const bookingForm = document.getElementById("booking-form");
+  const formStatus = document.getElementById("form-status");
+
   const navbar = document.querySelector(".navbar");
+  const header = document.querySelector(".header");
 
   const menuToggle = document.getElementById("menu-toggle");
-
   const navLinks = document.getElementById("nav-links");
 
   const links = document.querySelectorAll(".nav-links a");
-
   const sections = document.querySelectorAll("section");
 
   const themeToggle = document.getElementById("theme-toggle");
+  const testimonials = document.querySelectorAll(".testimonial-card");
+
 
 
   /* =========================
-     THEME LOAD
+     BOOKING FORM
   ========================= */
 
-  if (localStorage.getItem("theme") === "light") {
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", e => {
+      e.preventDefault();
 
-    document.body.classList.add("light");
+      if (formStatus) {
+        formStatus.textContent =
+          "Demo booking form — backend not connected.";
+      }
+    });
+  }
 
-    if (themeToggle) {
-      themeToggle.textContent = "☀️";
+
+
+  /* =========================
+     TESTIMONIAL SLIDER
+  ========================= */
+
+  if (testimonials.length) {
+
+    let current = 0;
+
+    function showSlide() {
+
+      testimonials.forEach(card => card.style.display = "none");
+
+      testimonials[current].style.display = "block";
+
+      current = (current + 1) % testimonials.length;
+
     }
+
+    showSlide();
+
+    setInterval(showSlide, 4000);
 
   }
 
 
+
   /* =========================
-     THEME TOGGLE
+     REVEAL ON SCROLL
   ========================= */
 
-  if (themeToggle) {
+  function revealSections() {
 
-    themeToggle.addEventListener("click", () => {
+    document.querySelectorAll(".fade-in").forEach(section => {
 
-      document.body.classList.toggle("light");
+      if (section.getBoundingClientRect().top < window.innerHeight - 100) {
 
-      if (document.body.classList.contains("light")) {
-
-        localStorage.setItem("theme", "light");
-
-        themeToggle.textContent = "☀️";
-
-      } else {
-
-        localStorage.setItem("theme", "dark");
-
-        themeToggle.textContent = "🌙";
+        section.classList.add("active");
 
       }
 
@@ -150,9 +86,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  revealSections();
+
+  window.addEventListener("scroll", revealSections);
+
+
 
   /* =========================
-     MOBILE NAVBAR TOGGLE
+     THEME
+  ========================= */
+
+  if (themeToggle) {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+
+      document.body.classList.add("light");
+      themeToggle.textContent = "☀️";
+
+    } else {
+
+      themeToggle.textContent = "🌙";
+
+    }
+
+    themeToggle.addEventListener("click", () => {
+
+      document.body.classList.toggle("light");
+
+      const light = document.body.classList.contains("light");
+
+      localStorage.setItem("theme", light ? "light" : "dark");
+
+      themeToggle.textContent = light ? "☀️" : "🌙";
+
+    });
+
+  }
+
+
+
+  /* =========================
+     MOBILE MENU
   ========================= */
 
   if (menuToggle && navLinks) {
@@ -161,51 +137,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
       navLinks.classList.toggle("active");
 
+      menuToggle.textContent =
+        navLinks.classList.contains("active") ? "✕" : "☰";
+
     });
 
   }
 
 
+
   /* =========================
-     CLOSE MOBILE MENU
+     NAVIGATION
   ========================= */
 
   links.forEach(link => {
 
-    link.addEventListener("click", () => {
+    link.addEventListener("click", e => {
 
-      if (navLinks) {
-        navLinks.classList.remove("active");
-      }
+      const href = link.getAttribute("href");
 
-    });
+      navLinks.classList.remove("active");
 
-  });
+      if (menuToggle) menuToggle.textContent = "☰";
 
+      if (!href.startsWith("#")) return;
 
-  /* =========================
-     SMOOTH SCROLL
-  ========================= */
+      const target = document.querySelector(href);
 
-  links.forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-      const targetId = this.getAttribute("href");
-
-      if (!targetId.startsWith("#")) return;
-
-      const targetSection = document.querySelector(targetId);
-
-      if (!targetSection) return;
+      if (!target) return;
 
       e.preventDefault();
 
-      const navbarHeight = navbar.offsetHeight;
-
       window.scrollTo({
 
-        top: targetSection.offsetTop - navbarHeight + 10,
+        top: target.offsetTop - navbar.offsetHeight,
 
         behavior: "smooth"
 
@@ -216,65 +181,72 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+
   /* =========================
-     NAVBAR SCROLL EFFECT
+     CLOSE MENU OUTSIDE
   ========================= */
 
-  window.addEventListener("scroll", () => {
+  document.addEventListener("click", e => {
 
-    if (window.scrollY > 50) {
+    if (!navLinks || !menuToggle) return;
 
-      navbar.classList.add("scrolled");
+    if (
+      !navLinks.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
 
-      navbar.style.background = "#000";
-
-      navbar.style.padding = "14px 8%";
-
-    } else {
-
-      navbar.classList.remove("scrolled");
-
-      navbar.style.background = "#111";
-
-      navbar.style.padding = "18px 8%";
+      navLinks.classList.remove("active");
+      menuToggle.textContent = "☰";
 
     }
 
   });
 
 
+
   /* =========================
-     SCROLLSPY
+     SCROLL EFFECTS
   ========================= */
 
-  window.addEventListener("scroll", () => {
+  function handleScroll() {
 
-    let current = "";
+    if (window.scrollY > 60) {
+
+      header?.classList.add("scrolled");
+      navbar?.classList.add("scrolled");
+
+    } else {
+
+      header?.classList.remove("scrolled");
+      navbar?.classList.remove("scrolled");
+
+    }
+
+    let currentSection = "";
 
     sections.forEach(section => {
 
-      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= section.offsetTop - 120) {
 
-      if (pageYOffset >= sectionTop) {
-
-        current = section.getAttribute("id");
+        currentSection = section.id;
 
       }
 
     });
 
-    links.forEach(a => {
+    links.forEach(link => {
 
-      a.classList.remove("active");
-
-      if (a.getAttribute("href") === "#" + current) {
-
-        a.classList.add("active");
-
-      }
+      link.classList.toggle(
+        "active-link",
+        link.getAttribute("href") === "#" + currentSection
+      );
 
     });
 
-  });
+  }
+
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll);
 
 });
