@@ -37,28 +37,48 @@
 
  <header>
 
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
 
-    <div class="logo">
-      <img src="images/JW-LOGO.png" alt="JWD">
-    </div>
+  <div class="logo">
+    <a href="#hero" aria-label="Go to homepage">
+  <img src="images/JW-LOGO.png" alt="JWD logo">
+</a>
+  </div>
 
-    <button class="hamburger" id="hamburger">
-      ☰
-    </button>
+  <button
+    class="hamburger"
+    id="hamburger"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="navLinks">
+    ☰
+  </button>
 
-    
   <ul class="nav-links" id="navLinks">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#cv">CV</a></li>
-    <li><button id="theme-toggle">Theme</button></li>
-    </ul>
 
-  </nav>
+    <li><a href="#hero" aria-current="page">Home</a></li>
+
+    <li><a href="#about">About</a></li>
+
+    <li><a href="#services">Services</a></li>
+
+    <li><a href="#projects">Projects</a></li>
+
+    <li><a href="#contact">Contact</a></li>
+
+    <li><a href="#cv">CV</a></li>
+
+    <li>
+      <button
+        id="theme-toggle"
+        aria-label="Toggle light and dark theme">
+        Theme
+      </button>
+    </li>
+
+  </ul>
+
+</nav>
 </header>
 
 <!-- MAIN CONTENT -->
@@ -550,6 +570,16 @@
    rel="noopener">
    WhatsApp
 </a>
+
+
+<!-- BACK TO TOP BUTTON -->
+<button
+  id="backToTop"
+  aria-label="Back to top">
+
+  ↑
+</button>
+
 
 </main>
 

@@ -1370,7 +1370,7 @@ CALL-TO-ACTION BANNER
 .whatsapp-float {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  left: 25px;
   background: #25d366;
   color: #fff;
   padding: 14px 18px;
@@ -1411,6 +1411,24 @@ CALL-TO-ACTION BANNER
   padding: 30px;
   border-radius: 0;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/*BACK TO TOP BUTTON*/
+#backToTop{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+    background:var(--accent);
+
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+
+    z-index: 9999;
+    display:none;
 }
 
 /* =================

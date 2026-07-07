@@ -136,18 +136,33 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 if (hamburger && navLinks) {
+
   hamburger.addEventListener("click", () => {
+
     hamburger.classList.toggle("active");
     navLinks.classList.toggle("active");
+
+    // Update accessibility state
+    const expanded = hamburger.classList.contains("active");
+    hamburger.setAttribute("aria-expanded", expanded);
+
   });
 
-  // close mobile menu when a nav link is clicked
+  // Close mobile menu when a nav link is clicked
   document.querySelectorAll(".nav-links a").forEach(link => {
+
     link.addEventListener("click", () => {
+
       hamburger.classList.remove("active");
       navLinks.classList.remove("active");
+
+      // Reset accessibility state
+      hamburger.setAttribute("aria-expanded", "false");
+
     });
+
   });
+
 }
 
 /* ===================
@@ -157,3 +172,30 @@ const yearEl = document.getElementById("year");
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+
+
+
+/*BACK TO TOP BUTTON*/
+const topBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 400){
+        topBtn.style.display="block";
+    }else{
+        topBtn.style.display="none";
+    }
+
+});
+
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+});
