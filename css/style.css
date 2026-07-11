@@ -108,7 +108,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--accent);
+  background: var(--button);
   color: #fff;
   padding: 0.75rem 1rem;
   text-decoration: none;
@@ -1364,28 +1364,7 @@ CALL-TO-ACTION BANNER
   white-space: nowrap;
   border: 0;
 }
-
-/*=======WHATSAPP BUTTON======*/
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  background: #25d366;
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: 0.3s;
-  z-index: 1000;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.05);
-}
-
+ 
 /*TESTIMONIALS SECTION*/
 .testimonials {
   padding: 100px 20px;
@@ -1448,6 +1427,19 @@ CALL-TO-ACTION BANNER
   padding: 60px 20px 40px;
   align-items: start;
   
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #14b8a6;
+
+  display: block;
+  margin: 0 auto 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-col h3,
