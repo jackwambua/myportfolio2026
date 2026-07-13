@@ -1429,17 +1429,12 @@ CALL-TO-ACTION BANNER
   
 }
 
-.footer-logo {
-  width: 60px;
-  height: 60px;
-
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #14b8a6;
-
-  display: block;
-  margin: 0 auto 1rem;
-  margin-bottom: 1.5rem;
+.footer-logo{
+    width:90px;
+    height:90px;
+    border-radius: 50%;
+    margin:0 auto;
+    border:2px solid var(--accent-dark);
 }
 
 .footer-col h3,
