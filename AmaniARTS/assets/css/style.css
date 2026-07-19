@@ -120,7 +120,7 @@ a {
 }
 .hero {
   background:
-    linear-gradient(rgba(90, 89, 4, 0.2), rgba(7, 7, 7, 0.2)),
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../images/hero.jpg");
 
   background-size: cover;
@@ -159,6 +159,7 @@ a {
   color: #f5f5f5; /* Light gray for better contrast */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
   max-width: 600px;
+  margin: 1rem auto 2rem;
   line-height: 1.6;
 }
 
