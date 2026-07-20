@@ -67,7 +67,6 @@ const texts = [
   "Business Websites",
   "Landing Pages",
   "Web Redesigns",
-
 ];
 
 let textIndex = 0;
@@ -131,38 +130,29 @@ if (skillSection) {
   skillObserver.observe(skillSection);
 }
 
-
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 if (hamburger && navLinks) {
-
   hamburger.addEventListener("click", () => {
-
     hamburger.classList.toggle("active");
     navLinks.classList.toggle("active");
 
     // Update accessibility state
     const expanded = hamburger.classList.contains("active");
     hamburger.setAttribute("aria-expanded", expanded);
-
   });
 
   // Close mobile menu when a nav link is clicked
-  document.querySelectorAll(".nav-links a").forEach(link => {
-
+  document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
-
       hamburger.classList.remove("active");
       navLinks.classList.remove("active");
 
       // Reset accessibility state
       hamburger.setAttribute("aria-expanded", "false");
-
     });
-
   });
-
 }
 
 /* ===================
@@ -173,29 +163,51 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-
-
 /*BACK TO TOP BUTTON*/
 const topBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 400){
-        topBtn.style.display="block";
-    }else{
-        topBtn.style.display="none";
-    }
-
+  if (window.scrollY > 400) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
 });
 
-
 topBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 
-    window.scrollTo({
+//CONTACT FORM SUBMISSION
+const form = document.querySelector("#contact-form");
 
-        top:0,
-        behavior:"smooth"
+emailjs.init({
+  publicKey: "dW93icgjj9vu7snSg",
+});
 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = form.from_name.value.trim();
+  const email = form.from_email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill in all required fields.");
+  }
+
+  emailjs
+    .sendForm("service_lv3z6sd", "template_880okis", form)
+    .then(() => {
+      alert("Message sent successfully!");
+      form.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Failed to send message.");
     });
-
+  return;
 });
