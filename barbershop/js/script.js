@@ -1,252 +1,124 @@
-/* ==================================================
-   ELITE BARBERSHOP
-================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* =========================
-     ELEMENTS
-  ========================= */
-
-  const bookingForm = document.getElementById("booking-form");
-  const formStatus = document.getElementById("form-status");
-
-  const navbar = document.querySelector(".navbar");
-  const header = document.querySelector(".header");
-
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  const links = document.querySelectorAll(".nav-links a");
-  const sections = document.querySelectorAll("section");
-
-  const themeToggle = document.getElementById("theme-toggle");
-  const testimonials = document.querySelectorAll(".testimonial-card");
-
-
-
-  /* =========================
-     BOOKING FORM
-  ========================= */
-
-  if (bookingForm) {
-    bookingForm.addEventListener("submit", e => {
-      e.preventDefault();
-
-      if (formStatus) {
-        formStatus.textContent =
-          "Demo booking form — backend not connected.";
-      }
-    });
-  }
-
-
-
-  /* =========================
-     TESTIMONIAL SLIDER
-  ========================= */
-
-  if (testimonials.length) {
-
-    let current = 0;
-
-    function showSlide() {
-
-      testimonials.forEach(card => card.style.display = "none");
-
-      testimonials[current].style.display = "block";
-
-      current = (current + 1) % testimonials.length;
-
-    }
-
-    showSlide();
-
-    setInterval(showSlide, 4000);
-
-  }
-
-
-
-  /* =========================
-     REVEAL ON SCROLL
-  ========================= */
-
-  function revealSections() {
-
-    document.querySelectorAll(".fade-in").forEach(section => {
-
-      if (section.getBoundingClientRect().top < window.innerHeight - 100) {
-
-        section.classList.add("active");
-
-      }
-
-    });
-
-  }
-
-  revealSections();
-
-  window.addEventListener("scroll", revealSections);
-
-
-
-  /* =========================
-     THEME
-  ========================= */
-
-  if (themeToggle) {
-
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "light") {
-
-      document.body.classList.add("light");
-      themeToggle.textContent = "☀️";
-
-    } else {
-
-      themeToggle.textContent = "🌙";
-
-    }
-
-    themeToggle.addEventListener("click", () => {
-
-      document.body.classList.toggle("light");
-
-      const light = document.body.classList.contains("light");
-
-      localStorage.setItem("theme", light ? "light" : "dark");
-
-      themeToggle.textContent = light ? "☀️" : "🌙";
-
-    });
-
-  }
-
-
-
-  /* =========================
-     MOBILE MENU
-  ========================= */
-
-  if (menuToggle && navLinks) {
-
-    menuToggle.addEventListener("click", () => {
-
-      navLinks.classList.toggle("active");
-
-      menuToggle.textContent =
-        navLinks.classList.contains("active") ? "✕" : "☰";
-
-    });
-
-  }
-
-
-
-  /* =========================
-     NAVIGATION
-  ========================= */
-
-  links.forEach(link => {
-
-    link.addEventListener("click", e => {
-
-      const href = link.getAttribute("href");
-
-      navLinks.classList.remove("active");
-
-      if (menuToggle) menuToggle.textContent = "☰";
-
-      if (!href.startsWith("#")) return;
-
-      const target = document.querySelector(href);
-
-      if (!target) return;
-
-      e.preventDefault();
-
-      window.scrollTo({
-
-        top: target.offsetTop - navbar.offsetHeight,
-
-        behavior: "smooth"
-
-      });
-
-    });
-
+// ===============================
+// MOBILE MENU
+// ===============================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", !expanded);
+});
+
+// Close menu after clicking a link
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
   });
+});
 
+// ===============================
+// DARK MODE
+// ===============================
 
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
 
-  /* =========================
-     CLOSE MENU OUTSIDE
-  ========================= */
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  themeIcon.classList.replace("fa-moon", "fa-sun");
+  themeToggle.setAttribute("aria-pressed", "true");
+}
 
-  document.addEventListener("click", e => {
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 
-    if (!navLinks || !menuToggle) return;
+  const darkMode = document.body.classList.contains("dark-mode");
 
-    if (
-      !navLinks.contains(e.target) &&
-      !menuToggle.contains(e.target)
-    ) {
+  themeIcon.classList.toggle("fa-moon", !darkMode);
+  themeIcon.classList.toggle("fa-sun", darkMode);
 
-      navLinks.classList.remove("active");
-      menuToggle.textContent = "☰";
+  themeToggle.setAttribute("aria-pressed", darkMode);
 
-    }
+  localStorage.setItem("theme", darkMode ? "dark" : "light");
+});
 
-  });
+// ===============================
+// REVEAL ON SCROLL
+// ===============================
 
+const reveals = document.querySelectorAll(".reveal");
 
-
-  /* =========================
-     SCROLL EFFECTS
-  ========================= */
-
-  function handleScroll() {
-
-    if (window.scrollY > 60) {
-
-      header?.classList.add("scrolled");
-      navbar?.classList.add("scrolled");
-
-    } else {
-
-      header?.classList.remove("scrolled");
-      navbar?.classList.remove("scrolled");
-
-    }
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-      if (window.scrollY >= section.offsetTop - 120) {
-
-        currentSection = section.id;
-
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
       }
-
     });
+  },
+  {
+    threshold: 0.15,
+  },
+);
 
-    links.forEach(link => {
+reveals.forEach((section) => {
+  revealObserver.observe(section);
+});
 
-      link.classList.toggle(
-        "active-link",
-        link.getAttribute("href") === "#" + currentSection
-      );
+// ===============================
+// SMOOTH SCROLL
+// ===============================
 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     });
+  });
+});
 
+// ===============================
+// HEADER SHADOW ON SCROLL
+// ===============================
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 40) {
+    header.style.boxShadow = "0 8px 20px rgba(0,0,0,.25)";
+  } else {
+    header.style.boxShadow = "none";
   }
+});
 
-  handleScroll();
+// ===============================
+// BOOKING FORM DEMO
+// ===============================
 
-  window.addEventListener("scroll", handleScroll);
+const bookingForm = document.getElementById("booking-form");
+const formStatus = document.getElementById("form-status");
 
+bookingForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  formStatus.style.color = "#c59d5f";
+  formStatus.textContent = "Booking request sent successfully!";
+
+  bookingForm.reset();
+
+  setTimeout(() => {
+    formStatus.textContent = "";
+  }, 4000);
 });

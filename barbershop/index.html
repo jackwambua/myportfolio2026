@@ -1,340 +1,534 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
 
-  <title>Elite Barbershop | Jack Wambua</title>
-  <meta name="description" content="Elite Barbershop project by Jack Wambua , built as a responsive frontend web design showcase with modern styling and service presentation." />
-  <meta name="keywords" content="Elite Barbershop website, Jack Wambua project, responsive website, frontend project, web design portfolio">
+    <title>Elite Barbershop | Jack Wambua</title>
+    <meta
+      name="description"
+      content="Elite Barbershop project by Jack Wambua , built as a responsive frontend web design showcase with modern styling and service presentation."
+    />
+    <meta
+      name="keywords"
+      content="Elite Barbershop website, Jack Wambua project, responsive website, frontend project, web design portfolio"
+    />
 
-  <meta name="author" content="Jack Wambua">
+    <meta name="author" content="Jack Wambua" />
 
-  <link rel="canonical" href="https://jackwambua.github.io/myportfolio2026/barbershop">
+    <link
+      rel="canonical"
+      href="https://jackwambua.github.io/myportfolio2026/barbershop"
+    />
 
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Elite Barbershop  Project | Jack Wambua">
-  <meta property="og:description" content="Barbershop website project by Jack Wambua, featuring responsive frontend design and modern service-focused layout.">
-  <meta property="og:image" content="images/hero.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jackwambua.github.io/myportfolio2026/barbershop/">
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Elite Barbershop  Project | Jack Wambua"
+    />
+    <meta
+      property="og:description"
+      content="Barbershop website project by Jack Wambua, featuring responsive frontend design and modern service-focused layout."
+    />
+    <meta property="og:image" content="images/hero.jpg" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://jackwambua.github.io/myportfolio2026/barbershop/"
+    />
 
-  <!-- X-TWITTER -->
-   <meta name="twitter:card" content="summary">
-   <meta name="twitter:title" content="Barbershop Project | Jack Wambua">
-   <meta name="twitter:description" content="Barbershop website project by Jack Wambua, featuring a responsive frontend design and modern service-focused layout.">
+    <!-- X-TWITTER -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Barbershop Project | Jack Wambua" />
+    <meta
+      name="twitter:description"
+      content="Barbershop website project by Jack Wambua, featuring a responsive frontend design and modern service-focused layout."
+    />
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-</head>
-  
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+          <h2>Elite Barbershop</h2>
+        </div>
 
-<body>
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
 
-  <header class="header">
+        <!-- Nav Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" class="book-btn">Book Now</a></li>
+        </ul>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
 
-   <nav class="navbar">
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <!-- Background Image -->
+      <div class="hero-image">
+        <img
+          src="images/elites-hero.jpg"
+          alt="Professional barber giving a fade haircut"
+          width="1600"
+          height="900"
+          loading="eager"
+        />
+      </div>
 
-    <!-- Logo -->
-    <div class="logo">
-      <h2>Elite Barbershop</h2>
-    </div>
+      <!-- Overlay -->
+      <div class="hero-overlay"></div>
 
-    <!-- Hamburger -->
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
+      <!-- Hero Content -->
+      <div class="container hero-content">
+        <span class="hero-tagline">
+          <i class="fa-solid fa-scissors"></i>
+          Premium Barber Experience
+        </span>
 
-    <!-- Nav Links -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#" class="book-btn">Book Now</a></li>
-    </ul>
-
-   </nav>
-
-</header>
-    
-
-     <!-- HERO SECTION -->
-<section class="hero" id="home">
-
-    <!-- Background Image -->
-    <div class="hero-image">
-        <img src="images/elites-hero.jpg" alt="Professional barber giving a fade haircut">
-    </div>
-
-    <!-- Dark Overlay -->
-    <div class="hero-overlay"></div>
-
-    <!-- Hero Content -->
-    <div class="hero-content container">
-
-        <span class="hero-tagline">✂️ Premium Barber Experience</span>
-
-        <h1>Precision Cuts.<br>Timeless Style.</h1>
+        <h1>
+          Precision Cuts.<br />
+          Timeless Style.
+        </h1>
 
         <p>
-            Experience expert haircuts, beard grooming, and classic hot towel
-            shaves in a modern, welcoming barbershop.
+          Experience expert haircuts, beard grooming, and classic hot towel
+          shaves in a modern, welcoming barbershop.
         </p>
 
         <div class="hero-buttons">
-            <a href="#booking" class="btn btn-primary">
-                Book Appointment
-            </a>
+          <a href="#contact" class="btn btn-primary">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book Appointment
+          </a>
 
-            <a href="#services" class="btn btn-secondary">
-                Explore Services
-            </a>
+          <a href="#services" class="btn btn-secondary">
+            <i class="fa-solid fa-arrow-down"></i>
+            Explore Services
+          </a>
         </div>
-
-    </div>
-
-</section>
-
+      </div>
+    </section>
 
     <!-- SERVICES -->
     <section id="services" class="reveal">
       <div class="container">
         <h2>Our Services</h2>
 
+        <p class="section-subtitle">Premium grooming tailored to your style.</p>
+
         <div class="services-box">
-          <div class="card">Haircut</div>
-          <div class="card">Beard Trim</div>
-          <div class="card">Full Grooming</div>
+          <article class="card">
+            <i class="fa-solid fa-scissors service-icon"></i>
+            <h3>Haircut</h3>
+            <p>Precision fades, tapers and classic cuts.</p>
+          </article>
+
+          <article class="card">
+            <i class="fa-solid fa-user service-icon"></i>
+            <h3>Beard Trim</h3>
+            <p>Professional beard shaping and detailing.</p>
+          </article>
+
+          <article class="card">
+            <i class="fa-solid fa-spa service-icon"></i>
+            <h3>Full Grooming</h3>
+            <p>Haircut, beard care and hot towel finish.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section id="pricing">
-      <div class="container"></div>
-      <h2>Pricing</h2>
-      <div class="pricing-grid">
-        <div class="card">
-          <h3>Haircut</h3>
-          <p>— Ksh800</p>
-        </div>
-        <div class="card">
-          <h3>Beard</h3>
-          <p>— Ksh500</p>
-        </div>
-        <div class="card">
-          <h3>Full Grooming</h3>
-          <p>— Ksh1000</p>
+    <section id="pricing" class="reveal">
+      <div class="container">
+        <h2>Pricing</h2>
+
+        <p class="section-subtitle">
+          Affordable grooming with premium quality.
+        </p>
+
+        <div class="pricing-grid">
+          <article class="card">
+            <i class="fa-solid fa-scissors"></i>
+            <h3>Haircut</h3>
+            <p class="price">Ksh 800</p>
+          </article>
+
+          <article class="card">
+            <i class="fa-solid fa-user"></i>
+            <h3>Beard Trim</h3>
+            <p class="price">Ksh 500</p>
+          </article>
+
+          <article class="card">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Full Grooming</h3>
+            <p class="price">Ksh 1000</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
+    <!-- GALLERY -->
+    <section id="gallery" class="reveal">
       <div class="container">
         <h2>Our Work</h2>
+
         <p class="section-subtitle">Fresh cuts. Clean fades. Sharp looks.</p>
 
         <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="images/cut1.jpg" alt="Man receiving a clean low fade haircut in a bright barbershop chair" />
-          </div>
+          <figure class="gallery-item">
+            <img
+              src="images/cut1.jpg"
+              alt="Man receiving a clean low fade haircut"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </figure>
 
-          <div class="gallery-item">
-            <img src="images/cut2.jpg" alt="Barber shaping a clients beard with precise clippers in a modern shop" />
-          </div>
+          <figure class="gallery-item">
+            <img
+              src="images/cut2.jpg"
+              alt="Barber shaping a client's beard"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </figure>
 
-          <div class="gallery-item">
-            <img src="images/cut3.jpg" alt="Smiling man with a sharp modern haircut seated in a stylish barbershop" />
-          </div>
+          <figure class="gallery-item">
+            <img
+              src="images/cut3.jpg"
+              alt="Customer with a modern haircut"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </figure>
 
-          <div class="gallery-item">
-            <img src="images/barbershop-hero.jpg" alt="Barbershop interior with polished chairs and professional grooming tools" />
-          </div>
+          <figure class="gallery-item">
+            <img
+              src="images/elites-hero.jpg"
+              alt="Modern barbershop interior"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- Booking CTA -->
+    <!-- CTA -->
     <section id="cta-booking" class="cta-section">
       <div class="container">
         <h2>Ready for a Fresh Cut?</h2>
-        <p>Book your appointment today and experience professional grooming.</p>
-        <a href="#contact" class="cta-btn">Book Appointment</a>
-      </div>
-      </section>
 
-    <!-- Testimonials Section -->
+        <p>
+          Book your appointment today and experience premium grooming from
+          skilled professionals.
+        </p>
+
+        <a href="#contact" class="cta-btn">
+          <i class="fa-solid fa-calendar-check"></i>
+          Book Appointment
+        </a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
     <section id="testimonials" class="reveal">
       <div class="container">
         <h2>What Our Clients Say</h2>
-        <p class="section-subtitle">Real reviews from satisfied customers</p>
-        <div class="testimonial">Great haircut experience!</div>
-        <div class="testimonial">Best barber in town!</div>
-        <div class="testimonial">Professional service!</div>
+
+        <p class="section-subtitle">Trusted by our loyal customers.</p>
 
         <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <p>
-              "Best fade I’ve ever had. Super clean shop and professional
-              service."
-            </p>
-            <h4>★★★★★</h4>
-            <span>- James K.</span>
-          </div>
+          <article class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
 
-          <div class="testimonial-card">
+            <p>
+              "Best fade I've ever had. Super clean shop and excellent service."
+            </p>
+
+            <span>— James K.</span>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+
             <p>
               "Attention to detail is unmatched. I always leave feeling fresh."
             </p>
-            <h4>★★★★★</h4>
-            <span>- Michael T.</span>
-          </div>
 
-          <div class="testimonial-card">
-            <p>"Friendly staff and top-tier grooming. Highly recommended!"</p>
-            <h4>★★★★★</h4>
-            <span>- Daniel W.</span>
-          </div>
+            <span>— Michael T.</span>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p>"Friendly staff, relaxing atmosphere and top-tier grooming."</p>
+
+            <span>— Daniel W.</span>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="reveal">
-      <div class="container"></div>
-      <h2>About Us</h2>
-      <p>Professional grooming services with modern style and comfort.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="reveal">
       <div class="container">
-        <h2>Contact Us</h2>
-        <p class="section-subtitle">Book your appointment or visit us today</p>
+        <h2>About Us</h2>
 
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Location</h3>
-            <p>Mombasa, Kenya</p>
+        <p class="section-subtitle">Where precision meets style.</p>
 
-            <h3>Phone</h3>
-            <p>+254 700 000 000</p>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              At <strong>Elite Barbershop</strong>, we believe every haircut is
+              a statement. Our experienced barbers combine modern techniques
+              with timeless craftsmanship to deliver sharp, confident looks.
+            </p>
 
-            <h3>Working Hours</h3>
-            <p>Mon – Sat: 9am – 8pm</p>
+            <p>
+              Whether you're after a classic cut, a skin fade, beard grooming,
+              or a complete transformation, we're committed to giving you an
+              exceptional grooming experience in a comfortable and welcoming
+              environment.
+            </p>
           </div>
 
-          <form class="contact-form reveal">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5"></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+          <div class="about-image">
+            <img
+              src="images/barber-tools.jpg"
+              alt="Professional barber tools arranged on a wooden workstation"
+              loading="lazy"
+              width="500"
+              height="350"
+            />
+          </div>
         </div>
-
-        <h2>Book Appointment</h2>
-
-        <form id="booking-form">
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Full Name"
-            required
-          />
-
-          <input
-            type="tel"
-            name="user_phone"
-            placeholder="Phone Number"
-            required
-          />
-
-          <select name="service" required>
-            <option value="">Select Service</option>
-            <option>Haircut</option>
-            <option>Beard Trim</option>
-            <option>Full Grooming</option>
-          </select>
-
-          <input type="datetime-local" name="appointment_time" required />
-
-          <textarea name="message" placeholder="Additional message"></textarea>
-
-          <button type="submit" class="cta-btn">Book Now</button>
-
-          <p id="form-status"></p>
-        </form>
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <h2>Contact Us</h2>
+
+        <p class="section-subtitle">
+          Book your appointment or get in touch today.
+        </p>
+
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              Mombasa, Kenya
+            </p>
+
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              +254 700 000 000
+            </p>
+
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              info@elitecuts.com
+            </p>
+
+            <p>
+              <i class="fa-solid fa-clock"></i>
+              Mon – Sat: 9:00 AM – 8:00 PM
+            </p>
+          </div>
+
+          <!-- Booking Form -->
+          <form id="booking-form" class="contact-form">
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Full Name"
+              required
+            />
+
+            <input
+              type="tel"
+              name="user_phone"
+              placeholder="Phone Number"
+              required
+            />
+
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Email Address"
+              required
+            />
+
+            <select name="service" required>
+              <option value="">Select Service</option>
+              <option>Haircut</option>
+              <option>Beard Trim</option>
+              <option>Full Grooming</option>
+            </select>
+
+            <input type="datetime-local" name="appointment_time" required />
+
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Additional Message"
+            ></textarea>
+
+            <button type="submit" class="cta-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+              Book Appointment
+            </button>
+
+            <p id="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOLD DIVIDER -->
     <div class="gold-divider"></div>
 
+    ...
 
-...
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-container">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <h3>Elite Barbershop</h3>
 
+          <p>
+            Premium grooming experience in Mombasa. Sharp fades, classic cuts,
+            beard grooming and modern style.
+          </p>
 
-    <!-- Footer -->
-  <footer>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
 
-<div class="footer-container">
+            <a href="#" aria-label="X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
 
-<div class="footer-brand">
-<h3>Elite Cuts</h3>
-<p>
-Premium grooming experience in Mombasa.  
-Sharp fades, classic cuts, and modern style.
-</p>
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
 
-<div class="footer-social">
-<a href="#">FB</a>
-<a href="#">X</a>
-<a href="#">WA</a>
-</div>
+            <a href="#" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
 
-</div>
+        <!-- Links -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
 
-<div class="footer-links">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
+          <ul>
+            <li><a href="#home">Home</a></li>
 
-<div class="footer-contact">
-<h4 class="footer-left">Contact</h4>
-<p>📍 Mombasa, Kenya</p>
-<p>📞 +254 700 000000</p>
-<p>✉ info@elitecuts.com</p>
-</div>
+            <li><a href="#services">Services</a></li>
 
-</div>
+            <li><a href="#pricing">Pricing</a></li>
 
-<div class="footer-bottom">
-© 2026 Elite Cuts Barbershop • All Rights Reserved
-</div>
+            <li><a href="#gallery">Gallery</a></li>
 
-</footer>  
+            <li><a href="#about">About</a></li>
 
-    <a href="https://wa.me/254700000000" class="whatsapp-btn" target="_blank">
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>Contact</h4>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Mombasa, Kenya
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +254 700 000 000
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            info@elitecuts.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Barbershop. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/254700000000"
+      class="whatsapp-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+    >
       <i class="fab fa-whatsapp"></i>
     </a>
 
     <!--JS-->
     <script src="js/script.js"></script>
-
-
-
   </body>
 </html>
