@@ -1,7 +1,6 @@
 /* ===================================
    GOOGLE FONTS
 =================================== */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* ===================================
@@ -21,7 +20,8 @@
   --text: #444;
   --heading: #222;
 
-  --footer-bg: #c59d5f;
+  --footer-bg: #52340f;
+  --footer-text: #ffffff;
 
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 
@@ -41,10 +41,11 @@ body.dark-mode {
   --light: #161616;
   --light-bg: #202020;
 
-  --heading: #fff;
+  --heading: #d3ae09;
   --text: #ddd;
 
-  --footer-bg: rgb(94, 88, 88);
+  --footer-bg: #111111;
+  --footer-text: #f2f2f2;
 }
 
 /* ===================================
@@ -136,7 +137,7 @@ h2 {
 
   z-index: 1000;
 
-  background: rgba(17, 17, 17, 0.92);
+  background: var(--primary);
 
   backdrop-filter: blur(12px);
 }
@@ -152,7 +153,7 @@ h2 {
 }
 
 .logo h2 {
-  color: var(--primary);
+  color: var(--light-bg);
 
   font-size: 1.5rem;
 }
@@ -166,19 +167,19 @@ h2 {
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--light);
 
   transition: var(--transition);
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--primary-dark);
 }
 
 .book-btn {
-  background: var(--primary);
-
-  color: #fff;
+  background: var(--dark);
+  color: var(--text);
+  border: radius 10px;
 
   padding: 0.8rem 1.4rem;
 
@@ -186,7 +187,7 @@ h2 {
 }
 
 .book-btn:hover {
-  background: var(--primary-dark);
+  background: var(--light);
 }
 
 .menu-toggle {
@@ -630,7 +631,7 @@ h2 {
 
 footer {
   background: var(--footer-bg);
-  color: #111;
+  color: var(--footer-text);
   padding: 4rem 0 1rem;
 }
 
@@ -642,19 +643,18 @@ footer {
 
 footer h3,
 footer h4 {
-  color: var(--text);
+  color: var(--footer-text);
   margin-bottom: 1rem;
 }
 
 .footer-brand p {
   margin-bottom: 1.5rem;
-  color: wheat;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .footer-social {
   display: flex;
   gap: 1rem;
-  background: var(--footer-bg);
 }
 
 .footer-social a {
@@ -664,12 +664,13 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #d1cfcc;
+  background: rgba(0, 0, 0, 25);
   transition: var(--transition);
 }
 
 .footer-social a:hover {
-  background: orange;
+  background: #fff;
+  color: var(--primary);
   transform: translateY(-4px);
 }
 
@@ -680,6 +681,7 @@ footer h4 {
 }
 
 .footer-links a {
+  color: rgba(255, 255, 255, 0.9);
   transition: var(--transition);
 }
 
@@ -699,7 +701,7 @@ footer h4 {
 .footer-bottom {
   margin-top: 3rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   padding-top: 1.5rem;
   font-size: 0.95rem;
 }
@@ -774,6 +776,10 @@ footer h4 {
 
   .hero h1 {
     font-size: 3rem;
+  }
+
+  .nav-links {
+    background: var(--light);
   }
 }
 
