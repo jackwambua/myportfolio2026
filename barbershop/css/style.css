@@ -9,7 +9,7 @@
 
 :root {
   --primary: #c59d5f;
-  --primary-dark: #b88a44;
+  --primary-dark: #e08e13;
 
   --dark: #111111;
   --dark-2: #1a1a1a;
@@ -173,7 +173,7 @@ h2 {
 }
 
 .nav-links a:hover {
-  color: var(--primary-dark);
+  color: #e7a222;
 }
 
 .book-btn {
@@ -305,6 +305,7 @@ h2 {
 
   flex-wrap: wrap;
 }
+
 .btn {
   display: inline-flex;
 
