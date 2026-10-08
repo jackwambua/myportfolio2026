@@ -765,6 +765,33 @@ footer h4 {
   border-radius: 50px;
 }
 
+/*===============================
+    LARGE SCREEENS
+===============================*/
+
+@media (max-width: 1500px) {
+  .about-content,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .nav-links {
+    background: var(--dark);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a:hover {
+    color: #111;
+  }
+}
+
 /*====================================
   RESPONSIVE - TABLETS
 ====================================*/

@@ -1,7 +1,6 @@
 /* =========================
    FADE IN ANIMATION
 ========================= */
-
 const faders = document.querySelectorAll(".fade-in");
 
 faders.forEach((fader) => {
@@ -28,7 +27,6 @@ faders.forEach((fader) => {
 /* =========================
    TOGGLE DARK MODE
 ========================= */
-
 const toggleBtn = document.getElementById("theme-toggle");
 
 if (toggleBtn) {
@@ -36,11 +34,9 @@ if (toggleBtn) {
     document.body.classList.toggle("dark-mode");
   });
 }
-
 /* =========================
    SMOOTH SCROLL
 ========================= */
-
 document.querySelectorAll("a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     const href = this.getAttribute("href");
@@ -54,11 +50,9 @@ document.querySelectorAll("a").forEach((anchor) => {
     }
   });
 });
-
 /* =========================
    INTERACTIVE HERO TYPING EFFECT
 ========================= */
-
 const texts = [
   "Web Designer",
   "Frontend Developer",
@@ -68,7 +62,6 @@ const texts = [
   "Landing Pages",
   "Web Redesigns",
 ];
-
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -77,37 +70,29 @@ const typingElement = document.getElementById("typing");
 
 function typeEffect() {
   if (!typingElement) return;
-
   const currentText = texts[textIndex];
-
   if (!isDeleting) {
     typingElement.textContent = currentText.substring(0, charIndex + 1);
     charIndex++;
-
     if (charIndex === currentText.length) {
       setTimeout(() => (isDeleting = true), 1200);
     }
   } else {
     typingElement.textContent = currentText.substring(0, charIndex - 1);
     charIndex--;
-
     if (charIndex === 0) {
       isDeleting = false;
       textIndex = (textIndex + 1) % texts.length;
     }
   }
-
   setTimeout(typeEffect, isDeleting ? 50 : 100);
 }
-
 if (typingElement) {
   typeEffect();
 }
-
 /* =========================
    SKILLS PROGRESS ANIMATION
 ========================= */
-
 const skillSection = document.querySelector("#skills");
 const progressBars = document.querySelectorAll(".progress");
 
@@ -212,3 +197,32 @@ form.addEventListener("submit", function (e) {
     });
   return;
 });
+
+//MESSAGE CHARACTER COUNTER
+const messageBox = form.message;
+
+messageBox.maxLength = 500;
+
+if (messageBox) {
+  const counter = document.createElement("small");
+
+  counter.textContent = "0 characters";
+
+  counter.classList.add("message-counter");
+
+  messageBox.insertAdjacentElement("afterend", counter);
+
+  messageBox.addEventListener("input", () => {
+    const length = messageBox.value.length;
+
+    counter.textContent = `${length}characters`;
+
+    if (length >= 500) {
+      counter.textContent = `${length} / 500 characters`;
+    }
+
+    if (length >= 500) {
+      counter.textContent = "Maximum 500 characters";
+    }
+  });
+}
