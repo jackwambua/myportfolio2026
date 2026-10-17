@@ -170,20 +170,52 @@ topBtn.addEventListener("click", () => {
 //CONTACT FORM SUBMISSION
 const form = document.querySelector("#contact-form");
 
-emailjs.init({
-  publicKey: "dW93icgjj9vu7snSg",
-});
+const nameInput = document.querySelector("#from-name");
+
+const emailInput = document.querySelector("#from-email");
+
+const messageElement = document.querySelector("#message");
 
 form.addEventListener("submit", function (e) {
+  console.log("JavaScript is working");
   e.preventDefault();
 
-  const name = form.from_name.value.trim();
-  const email = form.from_email.value.trim();
-  const message = form.message.value.trim();
+  // Validate name
+  const name = nameInput.value.trim();
 
-  if (!name || !email || !message) {
-    alert("Please fill in all required fields.");
+  if (name === "") {
+    alert("Please enter your name.");
+    return;
   }
+
+  // Validate email
+  const email = emailInput.value.trim();
+
+  if (email === "") {
+    alert("Please enter your email.");
+    return;
+  }
+  if (!emailInput.validity.valid) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Validate message
+  const message = messageElement.value.trim();
+
+  if (message === "") {
+    alert("Please enter your message.");
+    return;
+  }
+
+  if (!emailInput.validity.valid) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+  // Send the form using EmailJS
+  emailjs.init({
+    publicKey: "dW93icgjj9vu7snSg",
+  });
 
   emailjs
     .sendForm("service_lv3z6sd", "template_880okis", form)
@@ -195,7 +227,6 @@ form.addEventListener("submit", function (e) {
       console.error(error);
       alert("Failed to send message.");
     });
-  return;
 });
 
 //MESSAGE CHARACTER COUNTER
