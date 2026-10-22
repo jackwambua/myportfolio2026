@@ -616,6 +616,11 @@ h2 {
   cursor: pointer;
 }
 
+#form-status {
+  color: #e08e13;
+  margin: 10px 0;
+  min-height: 20px;
+}
 /*====================================
   GOLD DIVIDER
 ====================================*/
@@ -818,13 +823,16 @@ footer h4 {
 /*====================================
   RESPONSIVE - MOBILE
 ====================================*/
-
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 1.8rem;
+    z-index: 1001;
   }
-
   .nav-links {
+    display: none;
     position: absolute;
     top: 75px;
     left: 0;
@@ -832,19 +840,17 @@ footer h4 {
     background: var(--dark);
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    padding: 2rem 0;
-    display: none;
+    gap: 0.5rem;
+  }
+  .nav-links a:hover {
+    color: #e7a222;
+    display: flex;
+    flex-direction: column;
   }
 
   .nav-links.active {
     display: flex;
   }
-
-  .nav-links a:hover {
-    color: #e7a222;
-  }
-
   .hero {
     height: 90vh;
   }

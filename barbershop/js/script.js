@@ -1,124 +1,137 @@
+console.log("SCRIPT FILE LOADED");
 // ===============================
-// MOBILE MENU
+// BOOKING FORM + VALIDATION
 // ===============================
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = 
-document.getElementById("nav-links");
+const bookingForm = document.querySelector("#booking-form");
+const formStatus = document.querySelector("#form-status");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+console.log(bookingForm);
+console.log(formStatus);
 
-  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-  menuToggle.setAttribute("aria-expanded", !expanded);
-});
+if (bookingForm && formStatus) {
+  bookingForm.addEventListener("submit", function (event) {
+    console.log("Form submitted");
+    // Stop the demo form from refreshing the page
 
-// Close menu after clicking a link
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    menuToggle.setAttribute("aria-expanded", "false");
+    event.preventDefault();
+
+    // Read the booking details
+    const name = bookingForm.elements["user_name"].value.trim();
+    const phone = bookingForm.elements["user_phone"].value.trim();
+    const email = bookingForm.elements["user_email"].value.trim();
+    const service = bookingForm.elements["service"].value;
+    const appointmentTime = bookingForm.elements["appointment_time"].value;
+    const message = bookingForm.elements["message"].value;
+
+    // Clear the previous status
+    formStatus.textContent = "";
+
+    // 1. Validate the name
+    if (name === "") {
+      formStatus.textContent = "Please enter your full name.";
+      return;
+    }
+
+    // 2. Validate the phone number
+    if (phone === "") {
+      formStatus.textContent = "Please enter your phone number.";
+      return;
+    }
+
+    const phoneDigits = phone.replace(/\D/g, "");
+
+    if (phoneDigits.length < 9 || phoneDigits.length > 15) {
+      formStatus.textContent = "Please enter a valid phone number.";
+      return;
+    }
+
+    // 3. Validate the email
+    if (email === "") {
+      formStatus.textContent = "Please enter your email address.";
+      return;
+    }
+
+    // 4. Validate the selected service
+    if (service === "") {
+      formStatus.textContent = "Please select a service.";
+      return;
+    }
+
+    // 5. Validate the appointment date and time
+    if (appointmentTime === "") {
+      formStatus.textContent = "Please select your appointment date and time.";
+      return;
+    }
+
+    if (new Date(appointmentTime).getTime() <= Date.now()) {
+      formStatus.textContent = "Please choose a future appointment time.";
+      return;
+    }
+
+    // All validation checks passed
+    formStatus.style.color = "#0c9b79";
+    formStatus.textContent =
+      "Booking details validated successfully! (Demo only)";
+
+    // Reset the form after successful validation
+    bookingForm.reset();
+
+    // Clear the success message after four seconds
+    setTimeout(function () {
+      formStatus.textContent = "";
+    }, 4000);
   });
-});
-
-// ===============================
-// DARK MODE
-// ===============================
-const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = themeToggle.querySelector("i");
-
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-  themeIcon.classList.replace("fa-moon", "fa-sun");
-  themeToggle.setAttribute("aria-pressed", "true");
 }
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-
-  const darkMode = document.body.classList.contains("dark-mode");
-
-  themeIcon.classList.toggle("fa-moon", !darkMode);
-  themeIcon.classList.toggle("fa-sun", darkMode);
-
-  themeToggle.setAttribute("aria-pressed", darkMode);
-
-  localStorage.setItem("theme", darkMode ? "dark" : "light");
-});
-
 // ===============================
-// REVEAL ON SCROLL
+// REVEAL SECTIONS ON SCROLL
 // ===============================
 
-const reveals = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  },
-  {
-    threshold: 0.15,
-  },
-);
+function revealOnScroll() {
+  revealElements.forEach(function (element) {
+    const elementTop = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-reveals.forEach((section) => {
-  revealObserver.observe(section);
-});
-
-// ===============================
-// SMOOTH SCROLL
-// ===============================
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (!target) return;
-
-    e.preventDefault();
-
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    if (elementTop < windowHeight - 100) {
+      element.classList.add("active");
+    }
   });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+// Reveal sections that are already visible when the page loads
+revealOnScroll();
+
+const messageInput = document.querySelector("#booking-message");
+const messageCounter = document.querySelector("#message-counter");
+
+if (messageInput && messageCounter) {
+  messageInput.addEventListener("input", function updateMessageCounter() {
+    console.log("Typing detected!");
+    const characterCount = messageInput.value.length;
+    messageCounter.textContent = `${characterCount}/500 characters`;
+  });
+}
+
+console.log(document.querySelector("#booking-message"));
+console.log(document.querySelector("#message-counter"));
+
+//. TOGGLE THEME
+const themeToggle = document.querySelector("#theme-toggle");
+themeToggle.addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
 });
 
-// ===============================
-// HEADER SHADOW ON SCROLL
-// ===============================
+//. Hamburger Menu
+const menuToggle = document.querySelector("#menu-toggle");
+const navLinks = document.querySelector("#nav-links");
 
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 40) {
-    header.style.boxShadow = "0 8px 20px rgba(0,0,0,.25)";
-  } else {
-    header.style.boxShadow = "none";
-  }
-});
-
-// ===============================
-// BOOKING FORM DEMO
-// ===============================
-
-const bookingForm = document.getElementById("booking-form");
-const formStatus = document.getElementById("form-status");
-
-bookingForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  formStatus.style.color = "#c59d5f";
-  formStatus.textContent = "Booking request sent successfully!";
-
-  bookingForm.reset();
-
-  setTimeout(() => {
-    formStatus.textContent = "";
-  }, 4000);
-});
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+}

@@ -90,6 +90,7 @@ function typeEffect() {
 if (typingElement) {
   typeEffect();
 }
+
 /* =========================
    SKILLS PROGRESS ANIMATION
 ========================= */
