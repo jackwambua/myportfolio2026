@@ -135,3 +135,58 @@ if (menuToggle && navLinks) {
     navLinks.classList.toggle("active");
   });
 }
+
+// Pricing Arrays and Objects
+const services = [
+  {
+    name: "Haircut",
+    price: 800,
+    icon: "fa-scissors",
+  },
+  {
+    name: "Beard Trim",
+    price: 500,
+    icon: "fa-user",
+  },
+  {
+    name: "Full Grooming",
+    price: 1000,
+    icon: "fa-spa",
+  },
+];
+
+const pricingGrid = document.querySelector(".pricing-grid");
+
+services.forEach(function (service) {
+  const card = document.createElement("article");
+
+  card.classList.add("card");
+
+  card.innerHTML = `
+  <i class="fa-solid ${service.icon}"></i>
+  <h3>${service.name}</h3>
+  <p class="price">Ksh ${service.price}</p>
+  <button class="book-service"
+  type="button"
+  data-service="${service.name}"> Book this service</button>`;
+
+  pricingGrid.appendChild(card);
+});
+
+//Booking services
+const bookingService = document.querySelector("#booking-service");
+
+const bookButtons = document.querySelectorAll(".book-service");
+
+bookButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const selectedService = button.dataset.service;
+
+    bookingService.value = selectedService;
+
+    bookingService.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  });
+});

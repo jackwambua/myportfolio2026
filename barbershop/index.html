@@ -172,25 +172,7 @@
           Affordable grooming with premium quality.
         </p>
 
-        <div class="pricing-grid">
-          <article class="card">
-            <i class="fa-solid fa-scissors"></i>
-            <h3>Haircut</h3>
-            <p class="price">Ksh 800</p>
-          </article>
-
-          <article class="card">
-            <i class="fa-solid fa-user"></i>
-            <h3>Beard Trim</h3>
-            <p class="price">Ksh 500</p>
-          </article>
-
-          <article class="card">
-            <i class="fa-solid fa-spa"></i>
-            <h3>Full Grooming</h3>
-            <p class="price">Ksh 1000</p>
-          </article>
-        </div>
+        <div class="pricing-grid"></div>
       </div>
     </section>
 
@@ -412,11 +394,12 @@
               required
             />
 
-            <select name="service" required>
-              <option value="">Select Service</option>
-              <option>Haircut</option>
-              <option>Beard Trim</option>
-              <option>Full Grooming</option>
+            <!--Selecting Services-->
+            <select id="booking-service" name="service" required>
+              <option value="">Select a Service</option>
+              <option value="Haircut">Haircut</option>
+              <option value="Beard Trim">Beard Trim</option>
+              <option value="Full Grooming">Full Grooming</option>
             </select>
 
             <input type="datetime-local" name="appointment_time" required />
@@ -542,6 +525,6 @@
     </a>
 
     <!-- JAVASCRIPT -->
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
